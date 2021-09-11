@@ -2,6 +2,7 @@ from flask import render_template
 from app import app
 
 
+
 # Views
 @app.route('/')
 def index():
@@ -11,10 +12,13 @@ def index():
     title= ''
     return render_template('index.html', title=title)
 
-@app.route('/news/<news_id>')
-def news(news_id):
-    '''
-    this is the funcion that returns the news articles data
-    '''
-    title=news_id
-    return render_template('news.html',id=news_id,title=news_id)
+
+#Route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.   
+@app.route('/v2/everything')    
+
+#route that shows top headlines
+@app.route('/v2/top-headlines')
+
+
+#route that returns info on the selected headlines
+@app.route('/v2/top-headlines/sources')
