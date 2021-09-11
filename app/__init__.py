@@ -1,6 +1,6 @@
-#initialize app
-app= Flask(__name__)
+from flask import Flask
+
+# Initializing application
+app = Flask(__name__,template_folder='template')
 
 from app import views
-
-DEBUG = True

@@ -1,12 +1,12 @@
+from flask import Flask, render_template
 from app import app
-from flask import render_template
 
 
+# Views
 @app.route('/')
 def index():
     '''
-    root page that displays the index page
+    View root page function that returns the index page and its data
     '''
-
-    title="Azu's News"
-    return render_template('index.html',title=title)
+    title= 'New News'
+    return render_template('index.html', title=title)
