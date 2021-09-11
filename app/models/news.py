@@ -3,8 +3,9 @@ class News:
     class that genrates news object
     '''
 
-    def __init__(self,author,url,description,image,time_published):
+    def __init__(self,author,article,url,description,image,time_published):
         self.author=author
+        self.article=article
         self.url=url
         self.description=description
         self.image=image

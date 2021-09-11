@@ -15,14 +15,14 @@ def index():
 
 #Route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.   
 @app.route('/v2/everything')    
-def get_article(news_article):
+def get_article():
    
     '''
     Route:This route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.
     Function: Gets the articles
     '''
-    aricle=news_article
-    return render_template('news.html',article=news_article)
+    wow="kaikai"
+    return render_template('news.html',wow=wow)
 
 # #route that shows top headlines
 # @app.route('/v2/top-headlines')
