@@ -1,28 +1,28 @@
+{% extends 'bootstrap/base.html'%}
+
 <!DOCTYPE html>
 <html>
     <head>
         <title> {{ title }}</title>           
     </head>
     <body>
+        
+
         {% for list in news %}
         <ul> 
-            
-            
-            <li>Author:{{list.author}}</li>
-            
-            <li>Article:{{list.article}}</li>
            
-            <li> Url: {{list.url}}</li>
+            <h2>{{list.url}}</h2>    
+            <img src="{{list.article}}" alt="{{ list.title }} poster" class="img-responsive" >    
+            <li>Author:{{list.source}} </li>
+            <p>
+                {{list.image | truncate(400)}}<a href={{list.author}}> Click here.</a> <br>
+            </p>
             
-            <li>Image:{{list.description}}</li>
-            <li>Published on:{{list.image}}</li>
-
-            <li>Description:
-            {{list.time_published}}</li>
+            Published on:  {{list.description }}
         
         </ul>
         {% endfor %}
-        
+        </div>
     </body>
 </html>
 <!-- 

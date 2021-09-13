@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html'%}
+
+{% block content %}
     <head>
         <meta charset="utf-8">
         {% if title %}
@@ -20,12 +21,15 @@
             </p>
             
             Published on:  {{list.description }}
+            <br>    
+            source: {{list.time_published}}
             
         
         </ul>
         {%endfor%}
     </body>
-</html>
 
+{% endblock%}
+    
 
 <!-- News Sources -->

@@ -11,17 +11,18 @@ def index():
     View root page function that returns the index page and its data
     '''
     news= get_news('sports')
-    
+    top_headlines=get_news('top-headlines')
     title='Top Headlines'
-    return render_template('index.html', title = title , news=news)
+    return render_template('index.html', title = title , news=news, top_headlines=top_headlines)
 
-@app.route('/v2/sport')
+@app.route('/v2/top-headlines')
 def news():
 
     news=get_news('sports')
+    top_headlines=get_news('top-headlines')
     wows='Today'
     title='News Details'
-    return render_template('news.html', title = title, news=news)
+    return render_template('news.html', title = title, news=news, top_headlines=top_headlines)
 
 #Route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.   
 # @app.route('')    
