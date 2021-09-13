@@ -9,7 +9,12 @@
         {% endif %}
     </head>
     <body>
-
+        <h1>{{title}}</h1>
+        {% for list in news %}
+        <ul> 
+        <li>{{list.author}}</li>
+        </ul>
+        {%endfor%}
     </body>
 </html>
 

@@ -23,8 +23,9 @@ def get_news(category):
         news_results=None
 
         if get_news_response['articles']:
-            news_results_list = get_news_response['articles']
-            news_results=process_results(news_results_list)
+            news_list = get_news_response['articles']
+            news_results=process_results(news_list)
+    return news_results
 
 def process_results(news_list):
     '''
@@ -41,6 +42,11 @@ def process_results(news_list):
         image=news_item.get('urlToImage')
         datePyblished=news_item.get('publishedAt')
         article=news_item.get('content')
+        if author: 
+            news_zamz=News(author,websiteUrl,newsDescription,image,datePyblished,article)
+            news_results.append(news_zamz)
+    return news_results       
+    
 
 
 

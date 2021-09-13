@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from .request import get_news
 
 
 
@@ -9,20 +10,21 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    title= ''
-    return render_template('index.html', title=title)
-
+    news= get_news('sports')
+    
+    title='Top Headlines'
+    return render_template('index.html', title = title , news=news)
 
 #Route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.   
-@app.route('/v2/everything')    
-def get_article():
+# @app.route('')    
+# def get_article():
    
-    '''
-    Route:This route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.
-    Function: Gets the articles
-    '''
-    wow="kaikai"
-    return render_template('news.html',wow=wow)
+#     '''
+#     Route:This route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.
+#     Function: Gets the articles
+#     '''
+#     wow="kaikai"
+#     return render_template('news.html',wow=wow)
 
 # #route that shows top headlines
 # @app.route('/v2/top-headlines')
