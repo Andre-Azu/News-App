@@ -36,14 +36,15 @@ def process_results(news_list):
 
     news_results=[]
     for news_item in news_list:
+        source=news_item.get('source')
         author=news_item.get('author')
         websiteUrl=news_item.get('url')
         newsDescription=news_item.get('description')
         image=news_item.get('urlToImage')
-        datePyblished=news_item.get('publishedAt')
+        datePublished=news_item.get('publishedAt')
         article=news_item.get('content')
         if author: 
-            news_zamz=News(author,websiteUrl,newsDescription,image,datePyblished,article)
+            news_zamz=News(author,websiteUrl,newsDescription,image,datePublished,article,source)
             news_results.append(news_zamz)
     return news_results       
     

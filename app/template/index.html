@@ -5,14 +5,23 @@
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
-        <title> Newest News </title>
+        <title> Newest News home page</title>
         {% endif %}
     </head>
     <body>
         <h1>{{title}}</h1>
         {% for list in news %}
-        <ul> 
-        <li>{{list.author}}</li>
+        <ul>            
+            <h2>{{list.url}}</h2>    
+            <img src="{{list.article}}" alt="{{ list.title }} poster" class="img-responsive" >    
+            <li>Author:{{list.source}} </li>
+            <p>
+                {{list.image | truncate(400)}}<a href={{list.author}}> Click here.</a> <br>
+            </p>
+            
+            Published on:  {{list.description }}
+            
+        
         </ul>
         {%endfor%}
     </body>

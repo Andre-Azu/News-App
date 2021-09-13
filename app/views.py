@@ -15,6 +15,14 @@ def index():
     title='Top Headlines'
     return render_template('index.html', title = title , news=news)
 
+@app.route('/v2/sport')
+def news():
+
+    news=get_news('sports')
+    wows='Today'
+    title='News Details'
+    return render_template('news.html', title = title, news=news)
+
 #Route that enables search of every article published by over 80,000 different sources large and small in the last 3 years.   
 # @app.route('')    
 # def get_article():
