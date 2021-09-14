@@ -1,7 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="{{url_for('.static',filename='index.css')}}">
+
+
         <meta charset="utf-8">
         {% if title %}
         <title> {{ title }}</title>
@@ -10,14 +15,16 @@
         {% endif %}
     </head>
     <body>
-        <h1>{{title}}</h1>
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">{{title}}</h1>
         {% for list in news %}
         <ul>            
             <h2>{{list.url}}</h2>    
             <img src="{{list.article}}" alt="{{ list.title }} poster" class="img-responsive" >    
             <li>Author:{{list.source}} </li>
             <p>
-                {{list.image | truncate(400)}}<a href={{list.author}}> Click here.</a> <br>
+                {{list.image | truncate(400)}}
+                <a href={{list.author}} target="_blank" class='btn btn-primary'> Click here.</a>
+                 <br>
             </p>
             
             Published on:  {{list.description }}

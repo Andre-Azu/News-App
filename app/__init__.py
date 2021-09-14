@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__,template_folder='template',instance_relative_config = True)
 
 #Initialize extensions
-bootstrap = Bootstrap(app)
+Bootstrap(app)
 
 #Initializing configuration
 app.config.from_object(DevConfig)
