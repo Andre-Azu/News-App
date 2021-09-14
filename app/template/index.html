@@ -3,33 +3,34 @@
 <title> Newest News home page</title>      
 {% block content %}
  
-    <body>
-      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">{{title}}</h1>
+<body>
+      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif; background-color:bisque ">{{title }}</h1>
     <section class=" information-container">      
-      {% for list in news %}
+        {% for list in news %}
         <div class='card'>
-            <div class='img-container'>      
-                <img src="{{list.article}}" alt="{{ list.title }} poster" class="img-responsive" > 
+            <div class='row'>
+                <div class="col-md-4">
+                    <div class='img-container'>            
+                        <img src="{{list.article}}" alt="{{ list.title }} poster" class="img-responsive" >
+                    </div>                                
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2><strong>{{list.url | truncate(200) }}...</strong></h2>                      
+                        
+                        <p>                            
+                            <a href= "{{list.author}}" target="_blank" class='button'><span>Get more information</span> </a>
+                            <br> <br>
+                            Author:{{list.source}} <br>                        
+                            <small>Published on:  {{list.description }}</small>
+                            <br>    
+                            <small>source: {{list.time_published}}</small>
+                        </p>
+                    </div>  
+                </div>              
             </div>
-            <div class="card-body">
-                <h2>{{list.url | truncate(40) }}...</h2>                      
-                <li>Author:{{list.source}} </li>
-                <p>
-                    {{list.image | truncate(40)}}
-                    <a href= "{{list.author}}" target="_blank" class='btn btn-primary'> Get more information</a>
-                    <br>
-                </p>
-                
-                <small>Published on:  {{list.description }}</small>
-                <br>    
-                <small>source: {{list.time_published}}</small>
-            </div>               
-            </ul>
         </div> 
         {%endfor%}
     </section> 
-        
-    </body>
-
+</body>
 {% endblock %}
-<!-- News Sources -->
