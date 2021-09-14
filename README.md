@@ -20,4 +20,4 @@ Bootstrap
 # Contact details
 If you have any questions, kindly email,andreazuaa@gmail.com
 # License
-Copyright (c) 2021 Andre Azu
+Copyright (c) 2021 Andre Azu.
