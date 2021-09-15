@@ -9,6 +9,7 @@ Made in 2021
 A brouser to startup the page 
 
 # Live link
+https://azu-newsapp.herokuapp.com/
  
 ## Known Bugs
 {Are there issues that have not yet been resolved that you want to let users know you know? Outline any issues that would impact use of your application. Share any workarounds that are in place. }
